@@ -30,7 +30,19 @@ class dsLKD {
     }
 }
 
-    // 3. Hiển thị danh sách
+    //Thêm phần tử vào đầu danh sách
+    public void addFirst(int data) {
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+
+    // . Hiển thị danh sách
     public void hienThi() {
         Node current = head;
         while (current != null) {
@@ -40,11 +52,11 @@ class dsLKD {
         IO.println();
     }
 
-
 void main() {
     dsLKD List = new dsLKD();
     List.addLast(1); 
     List.addLast(9);
+    List.addFirst(19);
     IO.print("DS sau khi thêm: ");
     List.hienThi();
 }
