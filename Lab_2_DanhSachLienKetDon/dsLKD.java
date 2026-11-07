@@ -17,9 +17,36 @@ class dsLKD {
     public boolean isEmpty() {
         return head == null;
     }
+
+    // 2. Thêm phần tử vào cuối danh sách
+    public void addLast(int data) {
+    Node newNode = new Node(data);
+    if (isEmpty())  {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail.next = newNode;
+        tail = newNode;
+    }
 }
 
-// 2. Thêm phần tử vào cuối danh sách
+    // 3. Hiển thị danh sách
+    public void hienThi() {
+        Node current = head;
+        while (current != null) {
+            IO.print(current.data + " ");
+            current = current.next;
+        }
+        IO.println();
+    }
 
 
+void main() {
+    dsLKD List = new dsLKD();
+    List.addLast(1); 
+    List.addLast(9);
+    IO.print("DS sau khi thêm: ");
+    List.hienThi();
+}
+}
 
