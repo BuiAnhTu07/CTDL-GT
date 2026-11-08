@@ -71,7 +71,6 @@ class dsLKD {
         }
     }
 
-   
     // 5. Xóa phần tử đầu danh sách
     public void removeFirst() {
         if (isEmpty()) {
@@ -84,10 +83,12 @@ class dsLKD {
             Node current = head;
             while (current.next !=tail) {
             }
-            current.next = null;
-            tail = current;
+            head = head.next;
         }
     }
+
+    //  6. In danh sách LKD
+
 
      // Hiển thị danh sách
     public void hienThi() {
