@@ -71,17 +71,8 @@ class dsLKD {
         }
     }
 
-    // 5. Hiển thị danh sách
-    public void hienThi() {
-        Node current = head;
-        while (current != null) {
-            IO.print(current.data + " ");
-            current = current.next;
-        }
-        IO.println();
-    }
-
-    //Xóa phần tử đầu danh sách
+   
+    // 5. Xóa phần tử đầu danh sách
     public void removeFirst() {
         if (isEmpty()) {
             return;
@@ -97,6 +88,17 @@ class dsLKD {
             tail = current;
         }
     }
+
+     // Hiển thị danh sách
+    public void hienThi() {
+        Node current = head;
+        while (current != null) {
+            IO.print(current.data + " ");
+            current = current.next;
+        }
+        IO.println();
+    }
+
 
 void main() {
     dsLKD List = new dsLKD();
