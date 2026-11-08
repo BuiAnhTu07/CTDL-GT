@@ -71,7 +71,7 @@ class dsLKD {
         }
     }
 
-    // . Hiển thị danh sách
+    // 5. Hiển thị danh sách
     public void hienThi() {
         Node current = head;
         while (current != null) {
