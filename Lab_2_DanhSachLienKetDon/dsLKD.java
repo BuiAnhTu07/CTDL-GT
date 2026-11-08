@@ -18,6 +18,14 @@ class dsLKD {
         return head == null;
     }
 
+    /*public void initList() {
+        head = new Node(10);
+        head.next = new Node(11);
+        head.next.next = new Node(12);
+        head.next.next.next = new Node(13);
+        head.next.next.next.next = new Node(14);
+    } */
+
     // 2. Thêm phần tử vào cuối danh sách
     public void addLast(int data) {
     Node newNode = new Node(data);
@@ -30,7 +38,7 @@ class dsLKD {
     }
 }
 
-    //Thêm phần tử vào đầu danh sách
+    //3. Thêm phần tử vào đầu danh sách
     public void addFirst(int data) {
         Node newNode = new Node(data);
         if (isEmpty()) {
@@ -39,6 +47,26 @@ class dsLKD {
         } else {
             newNode.next = head;
             head = newNode;
+        }
+    }
+
+    // 4. Xóa phần tử cuối danh sách
+    public void removeLast() {
+
+        if (head == null) {
+            return;
+        }
+
+        if (isEmpty()) {
+            head = null;
+            tail = null;
+        } else {
+            Node current = head;
+            while (current.next != tail) {
+                current = current.next;
+            }
+            current.next = null;
+            tail = current;
         }
     }
 
@@ -55,9 +83,12 @@ class dsLKD {
 void main() {
     dsLKD List = new dsLKD();
     List.addLast(1); 
-    List.addLast(9);
-    List.addFirst(19);
+    List.addLast(2);
+    List.addFirst(3);
     IO.print("DS sau khi thêm: ");
+    List.hienThi();
+    IO.print("Danh sách sau khi xóa: ");
+    List.removeLast();
     List.hienThi();
 }
 }
