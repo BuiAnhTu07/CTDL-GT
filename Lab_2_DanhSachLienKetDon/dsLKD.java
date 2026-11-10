@@ -115,8 +115,16 @@ class dsLKD {
         }
     }
 
-    //Tìm kiếm một phần tử trong danh sách
-
+    //8. Tìm kiếm một phần tử trong danh sách
+    public boolean search(int key) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == key) {
+                return true; // Tìm thấy phần tử
+            }
+            current = current.next;
+        }
+        return false; // Không tìm thấy phần tử
      // Hiển thị danh sách
     public void hienThi() {
         Node current = head;
