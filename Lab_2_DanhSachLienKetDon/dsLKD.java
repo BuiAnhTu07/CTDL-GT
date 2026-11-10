@@ -93,6 +93,30 @@ class dsLKD {
         IO.println();
     }
 
+    //7. Thêm  môt phần tử vào giữa hai phần tử
+    public void insertAfter(int key, int data) {
+        Node current = head;
+        // Tìm node có giá trị bằng key
+        while (current != null && current.data != key) {
+            current = current.next;
+        }
+        
+        if (current != null) {
+            Node newNode = new Node(data);
+            newNode.next = current.next;
+            current.next = newNode;
+            // Nếu node tìm thấy đang là tail thì cập nhật lại tail mới
+            if (current == tail) {
+                tail = newNode;
+            }
+            IO.println("Đã thêm " + data + " sau " + key);
+        } else {
+            IO.println("Không tìm thấy giá trị " + key + " trong danh sách!");
+        }
+    }
+
+    //Tìm kiếm một phần tử trong danh sách
+
      // Hiển thị danh sách
     public void hienThi() {
         Node current = head;
