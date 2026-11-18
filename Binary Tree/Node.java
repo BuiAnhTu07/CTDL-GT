@@ -34,7 +34,7 @@ public Node(int data) {
  public void LNR(Node root) {
     if (root != null) {
         LNR(root.left);
-        System.out.println(root.data + "");
+        System.out.print(root.data + " ");
         LNR(root.right);
     }
  }  

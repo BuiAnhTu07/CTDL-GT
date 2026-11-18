@@ -28,14 +28,14 @@ public class Main {
         }
 
         // Truoc khi xoa
-        System.out.println("Truoc khi xoa:");
+        System.out.println("Truoc khi xoa: ");
         tree.LNR(tree.root);
 
         // Xoa node 50
         tree.root = tree.delete(tree.root, 50);
 
         // Sau khi xoa
-        System.out.println("Sau khi xoa:");
+        System.out.print("Sau khi xoa: ");
         tree.LNR(tree.root);
     }
 }
