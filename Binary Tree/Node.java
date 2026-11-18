@@ -31,12 +31,36 @@ public Node(int data) {
     return root;
  }
 
- public  void LNR(Node root) {
+ public void LNR(Node root) {
     if (root != null) {
         LNR(root.left);
         System.out.println(root.data + "");
         LNR(root.right);
     }
- }
+ }  
+public Node findMin(Node root) {
+    while (root.left != null) {
+        root = root.left;
+    }
+    return root;
+}
+
+//Xóa Node
+public Node delete(Node root, int value) {
+    if (root == null) return null;
+    if (value < root.data) {
+        root.left = delete(root.left, value);
+    } else if (value > root.data) {
+        root.right = delete(root.right, value);
+    }else {
+        if (root.left == null) return root.right;
+        if (root.right == null) return root.left;
+
+        Node minNode = findMin(root.right);
+        root.data = minNode.data;
+        root.right = delete(root.right, minNode.data);
+    }
+    return root;
+  }
 }
 
