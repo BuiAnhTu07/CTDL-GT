@@ -49,8 +49,9 @@ class BinarySearchTree {
 
     public Node insert(Node node, int key) {
         if (node == null) {
-            Node n = new Node(key);
-            return n;
+            return  new Node(key);
+            //Node n = new Node(key);
+            //return n;
         }
         if (key < node.key) {
             node.left = insert(node.left, key);
@@ -58,9 +59,19 @@ class BinarySearchTree {
         else if (key > node.key) {
         node.right = insert(node.right, key);
         }
+        return  node;
     }
 
     //public  boolean isEmplty() {
       //  return root == null;
     //}
+}
+
+void main() {
+    BinarySearchTree tree = new BinarySearchTree();
+    int[] values = {50, 30, 70, 20, 40, 60, 80};
+
+    for (int value: values) {
+        tree.insert(value);
+    }
 }
