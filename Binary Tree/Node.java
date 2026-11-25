@@ -1,4 +1,4 @@
-public class Node {
+/* Public class Node {
     int data;
     Node left;
     Node right;
@@ -62,5 +62,5 @@ public Node delete(Node root, int value) {
     }
     return root;
   }
-}
+}*/
 
